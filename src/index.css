@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+p{
+  cursor: pointer;
+  margin: 0;
+}
+
+.completed{
+  text-decoration: line-through;
+}
+
+.addTask{
+  background-color: #cffffe;
+  border-radius: 5px;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+
+}
+
+.padding-0{
+  padding: 0;
+}
+
