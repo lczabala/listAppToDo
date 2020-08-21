@@ -56,6 +56,13 @@ export const ToDoApp = () => {
         dispatch(action);
     }
 
+    const handleCompleted = (id) =>{
+        dispatch({
+            type: 'completed',
+            payload: id
+        })
+    }
+
     return (
         <div className="container-fluid text-center">
             <h1>ToDo App</h1>
@@ -86,13 +93,19 @@ export const ToDoApp = () => {
                         todo.map((todo, i) => (
                             <li
                                 key={todo.id}
-                                className="list-group-item flex"
+                                className={`list-group-item flex ${todo.done && ' done'}`}
                             >
-                                <p>{i + 1} - {todo.desc}</p>
-                                <button 
-                                    className="btn btn-danger ml-4 btn-sm"
-                                    onClick={()=> handleClickDelete(todo.id)}
-                                >Delete</button>
+                                
+                                    <p 
+                                        className= ""
+                                        onClick={()=> handleCompleted(todo.id)}
+                                    >{i + 1} - {todo.desc}</p>
+                                    <button 
+                                        className="btn btn-danger ml-4 btn-sm"
+                                        onClick={()=> handleClickDelete(todo.id)}
+                                    >Delete</button>
+                                
+                                
                             </li>
                         ))
                     }
