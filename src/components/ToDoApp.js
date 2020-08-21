@@ -46,6 +46,16 @@ export const ToDoApp = () => {
         reset();
     }
 
+    const handleClickDelete = (id) =>{
+        
+        const action = {
+            type: 'delete',
+            payload: id
+        }
+       
+        dispatch(action);
+    }
+
     return (
         <div className="container-fluid text-center">
             <h1>ToDo App</h1>
@@ -79,7 +89,10 @@ export const ToDoApp = () => {
                                 className="list-group-item flex"
                             >
                                 <p>{i + 1} - {todo.desc}</p>
-                                <button className="btn btn-danger ml-4 btn-sm">Delete</button>
+                                <button 
+                                    className="btn btn-danger ml-4 btn-sm"
+                                    onClick={()=> handleClickDelete(todo.id)}
+                                >Delete</button>
                             </li>
                         ))
                     }
